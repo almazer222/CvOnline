@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "ELa0CI4jAqNcyRNgl8q9mR5zZYRHN8tmddg/E1MoFhY99jg1Pqc0NoEgJ98Lv2KE+2j3b+H5vgQJkAgwsPuz6Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Vercruysse\\Downloads\\Mon Cv Online-20220308T141727Z-001\\Mon Cv Online\\CvOnline.Service\\CvOnline.Service.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Vercruysse\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Vercruysse\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Vercruysse\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

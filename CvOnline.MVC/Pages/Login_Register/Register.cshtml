@@ -1,0 +1,59 @@
+﻿@page
+@model CvOnline.MVC.Pages.Login_Register.RegisterModel
+@{
+}
+
+<body>
+    <h1> <p class="text-uppercase pull-center"> SIGN UP.</p></h1>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <form role="form" method="post">
+                        <fieldset>
+                            <p class="text-uppercase pull-center"> Information</p>
+                            <div class="form-group">
+                                <input type="text" name="lastname" id="lastname" class="form-control input-lg" placeholder="Nom de famille*" asp-for="@Model.User.LastName" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="firstname" id="firstname" class="form-control input-lg" placeholder="Prénom*"  asp-for="@Model.User.FirstName" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email*"  asp-for="@Model.User.Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" id="password" class="form-control input-lg" placeholder="mot de passe*" asp-for="@Model.User.Password" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="passconf" id="passconf" class="form-control input-lg" placeholder="Confirmer le mot de passe*" asp-for="@Model.User.ConfirmPassword" required>
+                            </div>
+
+                            <p class="text-uppercase pull-center"> Entreprise</p>
+                            <div class="form-group">
+                                <input type="text" name="entreprisename" id="entreprisename" class="form-control input-lg" placeholder="Nom de l'entreprise*" asp-for="@Model.Entreprise.Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="street" id="street" class="form-control input-lg" placeholder="Rue" asp-for="@Model.Address.Street">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="number" id="number" class="form-control input-lg" placeholder="Numero" asp-for="@Model.Address.Number">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="town" id="town" class="form-control input-lg" placeholder="Ville"  asp-for="@Model.Address.Town">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="codepostal" id="codepostal" class="form-control input-lg" placeholder="Code postal"  asp-for="@Model.Address.PostalCode">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="contry" id="contry" class="form-control input-lg" placeholder="Pays"  asp-for="@Model.Address.Contry">
+                            </div>
+                            <div>
+                                <input type="submit" class="btn btn-lg btn-primary value="Register">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
