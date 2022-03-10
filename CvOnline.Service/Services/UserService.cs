@@ -39,7 +39,7 @@ namespace CvOnline.Service.Services
             return newUser;
         }
 
-        public async Task RemoveUser(User user)
+        public async Task RemoveUserAsync(User user)
         {
             _unitOfWork.UserRepository.Remove(user);
             await _unitOfWork.SaveChangesAsync();

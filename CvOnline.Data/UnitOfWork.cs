@@ -1,27 +1,53 @@
 ﻿using CvOnline.Domain.Models;
 using CvOnline.Domain.Repositories;
 using CvOnline.Infrastructure.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace CvOnline.Infrastructure
 {
+    /// <summary>
+    /// Class Unit of work is used to group one or more operations into a single transaction.
+    /// </summary>
     public class UnitOfWork : IUnitOfWork
     {
+        #region Private Properties
         private readonly CvOnlineDbContext _context;
         private IUserRepository _userRepository;
         private IRepository<Entreprise> _entrepriseRepository;
         private IRepository<Address> _addressRepository;
+        private IRepository<CvItems> _cvItemsRepository;
+        #endregion
 
-
+        #region Constructor
+        /// <summary>
+        /// Constructor to inject the DbContext 
+        /// </summary>
+        /// <param name="context"></param>
         public UnitOfWork(CvOnlineDbContext context)
         {
             _context = context;
         }
+        #endregion
 
+        #region Public properties
+        /// <summary>
+        /// To inject the DBcontext in Cv Item repository
+        /// </summary>
+        public IRepository<CvItems> CvItemRepository
+        {
+            get
+            {
+                if (_cvItemsRepository == null)
+                {
+                    _cvItemsRepository = new CvItemsRepository(_context);
+                }
+                return _cvItemsRepository;
+            }
+        }
+
+        /// <summary>
+        /// To inject the DBcontext in entreprise repository
+        /// </summary>
         public IRepository<Entreprise> EntrepriseRepository
         {
             get
@@ -34,6 +60,9 @@ namespace CvOnline.Infrastructure
             }
         }
 
+        /// <summary>
+        /// To inject the DBcontext in Adress repository
+        /// </summary>
         public IRepository<Address> AddressRepository
         {
             get
@@ -44,17 +73,25 @@ namespace CvOnline.Infrastructure
                 }
                 return _addressRepository;
             }
-        }
-
-        public IUserRepository UserRepository => _userRepository = _userRepository ?? new UserRepository(_context);
+        } 
 
         /// <summary>
-        /// Le commit est appliqué quand plusieurs opérations sont éffectués.
+        /// If user repository don't exist, the debug inject the db context
+        /// </summary>
+        public IUserRepository UserRepository => _userRepository = _userRepository ?? new UserRepository(_context);
+
+       
+        #endregion
+
+        #region Public method
+        /// <summary>
+        /// The commit is applied when several operations are performed.
         /// </summary>
         /// <returns></returns>
         public async Task<int> SaveChangesAsync()
         {
             return await _context.SaveChangesAsync();
-        }
+        } 
+        #endregion
     }
 }

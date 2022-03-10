@@ -18,29 +18,29 @@ namespace CvOnline.Service.Services
             _unitOfWork = unitOfWork;
         }
 
-        public async Task CreateEntreprise(Entreprise entreprise)
+        public async Task CreateEntrepriseAsync(Entreprise entreprise)
         {
             await _unitOfWork.EntrepriseRepository.AddAsync(entreprise);
             await _unitOfWork.SaveChangesAsync();
         }
-        public async Task UpdateEntreprise(Entreprise entreprise)
+        public async Task UpdateEntrepriseAsync(Entreprise entreprise)
         {
             _unitOfWork.EntrepriseRepository.Update(entreprise);
             await _unitOfWork.SaveChangesAsync();
         }
 
-        public async Task RemoveEntreprise(Entreprise entreprise)
+        public async Task RemoveEntrepriseAsync(Entreprise entreprise)
         {
             _unitOfWork.EntrepriseRepository.Remove(entreprise);
             await _unitOfWork.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Entreprise>> GetAllEntreprises()
+        public async Task<IEnumerable<Entreprise>> GetAllEntreprisesAsync()
         {
             return await _unitOfWork.EntrepriseRepository.GetAllAsync();
         }
 
-        public async Task<Entreprise> GetEntrepriseById(int id)
+        public async Task<Entreprise> GetEntrepriseByIdAsync(int id)
         {
             return await _unitOfWork.EntrepriseRepository.GetByIdAsync(id);
         }

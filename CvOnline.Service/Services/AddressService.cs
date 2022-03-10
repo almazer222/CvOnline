@@ -15,29 +15,29 @@ namespace CvOnline.Service.Services
             _unitOfWork = unitOfWork;
         }
 
-        public async Task CreateAddress(Address address)
+        public async Task CreateAddressAsync(Address address)
         {
             await _unitOfWork.AddressRepository.AddAsync(address);
             await _unitOfWork.SaveChangesAsync();
         }
 
-        public async Task RemoveAddress(Address address)
+        public async Task RemoveAddressAsync(Address address)
         {
             _unitOfWork.AddressRepository.Remove(address);
             await _unitOfWork.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Address>> GetAllAddress()
+        public async Task<IEnumerable<Address>> GetAllAddressAsync()
         {
             return await _unitOfWork.AddressRepository.GetAllAsync();
         }
 
-        public async Task<Address> GetAddressById(int id)
+        public async Task<Address> GetAddressByIdAsync(int id)
         {
             return await _unitOfWork.AddressRepository.GetByIdAsync(id);
         }
 
-        public async Task UpdateAddress(Address address)
+        public async Task UpdateAddressAsync(Address address)
         {
             _unitOfWork.AddressRepository.Update(address);
             await _unitOfWork.SaveChangesAsync();

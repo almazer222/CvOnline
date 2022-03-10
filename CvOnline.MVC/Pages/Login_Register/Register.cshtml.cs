@@ -32,8 +32,6 @@ namespace CvOnline.MVC.Pages.Login_Register
         public EntrepriseModels Entreprise { get; set; }
         [BindProperty]
         public AddressModels Address { get; set; }
-        public string? ErrorMessage { get; private set; }
-        public bool IsCorrect { get; set; }
         #endregion
 
 

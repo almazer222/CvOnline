@@ -3,7 +3,6 @@ using CvOnline.API.Helper;
 using CvOnline.API.Ressources;
 using CvOnline.API.Validation;
 using CvOnline.Domain.Models;
-using CvOnline.Domain.Models;
 using CvOnline.Domain.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -51,10 +50,10 @@ namespace CvOnline.API.Controllers
 
                 if (user == null) return NotFound("User not found");
 
-                var entreprise = await _entrepriseService.GetEntrepriseById(user.EntrepriseId);
+                var entreprise = await _entrepriseService.GetEntrepriseByIdAsync(user.EntrepriseId);
                 if(entreprise != null)
                 {
-                    var address = await _addressService.GetAddressById(entreprise.AddressId);
+                    var address = await _addressService.GetAddressByIdAsync(entreprise.AddressId);
 
                     user.Entreprise = entreprise;
                     user.Entreprise.Address = address;
@@ -150,7 +149,7 @@ namespace CvOnline.API.Controllers
 
                 if (user == null) return NotFound("User not found.");
 
-                await _userService.RemoveUser(user);
+                await _userService.RemoveUserAsync(user);
 
                 return Ok("User was deleted.");
             }

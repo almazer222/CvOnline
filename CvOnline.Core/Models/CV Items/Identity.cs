@@ -16,6 +16,11 @@ namespace CvOnline.Domain.Models.CV_Items
 
         [ForeignKey(nameof(AdressId))]
         public Address Address { get; set; }
- 
+
+        public int CvId { get; set; }
+        [ForeignKey(nameof(CvId))]
+        [InverseProperty(nameof(CvItems.Identities))]
+        public CvItems Cv { get; set; }
+
     }
 }

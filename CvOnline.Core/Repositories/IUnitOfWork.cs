@@ -9,6 +9,7 @@ namespace CvOnline.Domain.Repositories
         IUserRepository UserRepository { get; }
         IRepository<Entreprise> EntrepriseRepository { get; }
         IRepository<Address> AddressRepository { get; }
+        IRepository<CvItems> CvItemRepository { get; }
         Task<int> SaveChangesAsync();
     }
 }

@@ -13,6 +13,6 @@ namespace CvOnline.Domain.Services
         Task<User> GetUserByIdAsync(int id);
         Task<User> CreateUserWithEntrepriseAndAddressAsync(User user, string password, Entreprise entreprise, Address address);
         Task UpdateUserAsync(User user, string password = null);
-        Task RemoveUser(User user);
+        Task RemoveUserAsync(User user);
     }
 }

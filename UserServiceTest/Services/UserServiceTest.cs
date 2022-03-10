@@ -3,6 +3,7 @@ using CvOnline.Domain.Repositories;
 using CvOnline.Service.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using System.Threading.Tasks;
 
 namespace UserServiceTest.Services
 {
@@ -64,7 +65,7 @@ namespace UserServiceTest.Services
         /// Test de suppresion d'un utilisateur.
         /// </summary>
         [TestMethod]
-        public void RemoveUserById()
+        public async Task RemoveUserById()
         {
             var userRepository = new Mock<IUserRepository>();
             var unitOfWork = new Mock<IUnitOfWork>();
@@ -83,7 +84,7 @@ namespace UserServiceTest.Services
                 PhoneNumber = "099782662"
             };
 
-            var userReturned = userService.RemoveUser(user);
+            await userService.RemoveUserAsync(user);
 
             //Assert
 

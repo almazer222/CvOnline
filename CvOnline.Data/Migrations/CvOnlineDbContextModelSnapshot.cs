@@ -49,6 +49,188 @@ namespace CvOnline.Infrastructure.Migrations
                     b.ToTable("Address");
                 });
 
+            modelBuilder.Entity("CvOnline.Domain.Models.CV_Items.Certification", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CvId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CvId");
+
+                    b.ToTable("Certification");
+                });
+
+            modelBuilder.Entity("CvOnline.Domain.Models.CV_Items.Experiance", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CvId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Poste")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CvId");
+
+                    b.ToTable("Experiance");
+                });
+
+            modelBuilder.Entity("CvOnline.Domain.Models.CV_Items.Identity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AdressId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CvId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("KindOfWork")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AdressId");
+
+                    b.HasIndex("CvId")
+                        .IsUnique();
+
+                    b.ToTable("Identity");
+                });
+
+            modelBuilder.Entity("CvOnline.Domain.Models.CV_Items.Interest", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CvId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CvId");
+
+                    b.ToTable("Interest");
+                });
+
+            modelBuilder.Entity("CvOnline.Domain.Models.CV_Items.Skill", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CvId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CvId");
+
+                    b.ToTable("Skill");
+                });
+
+            modelBuilder.Entity("CvOnline.Domain.Models.CV_Items.SkillItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SkillId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SkillId");
+
+                    b.ToTable("SkillItem", "dbo");
+                });
+
+            modelBuilder.Entity("CvOnline.Domain.Models.CV_Items.Social", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CvId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CvId");
+
+                    b.ToTable("Social");
+                });
+
+            modelBuilder.Entity("CvOnline.Domain.Models.CvItems", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CV");
+                });
+
             modelBuilder.Entity("CvOnline.Domain.Models.Entreprise", b =>
                 {
                     b.Property<int>("Id")
@@ -104,15 +286,100 @@ namespace CvOnline.Infrastructure.Migrations
                     b.ToTable("User");
                 });
 
+            modelBuilder.Entity("CvOnline.Domain.Models.CV_Items.Certification", b =>
+                {
+                    b.HasOne("CvOnline.Domain.Models.CvItems", "Cv")
+                        .WithMany("Certifications")
+                        .HasForeignKey("CvId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cv");
+                });
+
+            modelBuilder.Entity("CvOnline.Domain.Models.CV_Items.Experiance", b =>
+                {
+                    b.HasOne("CvOnline.Domain.Models.CvItems", "Cv")
+                        .WithMany("Experiances")
+                        .HasForeignKey("CvId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cv");
+                });
+
+            modelBuilder.Entity("CvOnline.Domain.Models.CV_Items.Identity", b =>
+                {
+                    b.HasOne("CvOnline.Domain.Models.Address", "Address")
+                        .WithMany()
+                        .HasForeignKey("AdressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CvOnline.Domain.Models.CvItems", "Cv")
+                        .WithOne("Identities")
+                        .HasForeignKey("CvOnline.Domain.Models.CV_Items.Identity", "CvId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Address");
+
+                    b.Navigation("Cv");
+                });
+
+            modelBuilder.Entity("CvOnline.Domain.Models.CV_Items.Interest", b =>
+                {
+                    b.HasOne("CvOnline.Domain.Models.CvItems", "Cv")
+                        .WithMany("Interests")
+                        .HasForeignKey("CvId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cv");
+                });
+
+            modelBuilder.Entity("CvOnline.Domain.Models.CV_Items.Skill", b =>
+                {
+                    b.HasOne("CvOnline.Domain.Models.CvItems", "Cv")
+                        .WithMany("Skills")
+                        .HasForeignKey("CvId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cv");
+                });
+
+            modelBuilder.Entity("CvOnline.Domain.Models.CV_Items.SkillItem", b =>
+                {
+                    b.HasOne("CvOnline.Domain.Models.CV_Items.Skill", "Skill_Tab")
+                        .WithMany("SkillItems")
+                        .HasForeignKey("SkillId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Skill_Tab");
+                });
+
+            modelBuilder.Entity("CvOnline.Domain.Models.CV_Items.Social", b =>
+                {
+                    b.HasOne("CvOnline.Domain.Models.CvItems", "Cv")
+                        .WithMany("Socials")
+                        .HasForeignKey("CvId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cv");
+                });
+
             modelBuilder.Entity("CvOnline.Domain.Models.Entreprise", b =>
                 {
-                    b.HasOne("CvOnline.Domain.Models.Address", "MainAddress")
+                    b.HasOne("CvOnline.Domain.Models.Address", "Address")
                         .WithMany()
                         .HasForeignKey("AddressId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("MainAddress");
+                    b.Navigation("Address");
                 });
 
             modelBuilder.Entity("CvOnline.Domain.Models.User", b =>
@@ -124,6 +391,26 @@ namespace CvOnline.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("Entreprise");
+                });
+
+            modelBuilder.Entity("CvOnline.Domain.Models.CV_Items.Skill", b =>
+                {
+                    b.Navigation("SkillItems");
+                });
+
+            modelBuilder.Entity("CvOnline.Domain.Models.CvItems", b =>
+                {
+                    b.Navigation("Certifications");
+
+                    b.Navigation("Experiances");
+
+                    b.Navigation("Identities");
+
+                    b.Navigation("Interests");
+
+                    b.Navigation("Skills");
+
+                    b.Navigation("Socials");
                 });
 #pragma warning restore 612, 618
         }

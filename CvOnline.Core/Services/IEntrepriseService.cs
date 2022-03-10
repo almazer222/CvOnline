@@ -6,10 +6,10 @@ namespace CvOnline.Domain.Services
 {
     public interface IEntrepriseService
     {
-        Task<IEnumerable<Entreprise>> GetAllEntreprises();
-        Task<Entreprise> GetEntrepriseById(int id);
-        Task CreateEntreprise(Entreprise entreprise);
-        Task UpdateEntreprise(Entreprise entreprise);
-        Task RemoveEntreprise(Entreprise entreprise);
+        Task<IEnumerable<Entreprise>> GetAllEntreprisesAsync();
+        Task<Entreprise> GetEntrepriseByIdAsync(int id);
+        Task CreateEntrepriseAsync(Entreprise entreprise);
+        Task UpdateEntrepriseAsync(Entreprise entreprise);
+        Task RemoveEntrepriseAsync(Entreprise entreprise);
     }
 }

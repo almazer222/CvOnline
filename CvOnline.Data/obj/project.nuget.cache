@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SsuKD8iVeaL9dOKFGa+nPmbNulnCpjWXY0N+/s4r9ClWqzF5F8TdkAgvVbpG8XsPJOzoIhux4CIKLz89i2zPdQ==",
+  "dgSpecHash": "MRWJgKuDSaxh164AXlk3t0w5jFP5Zk9eFdQHDagEG6f8/SEbizWDu2x/jYZNF4aLSluVJzmN0n+XMjWBO6zKig==",
   "success": true,
   "projectFilePath": "C:\\Users\\Vercruysse\\Downloads\\Mon Cv Online-20220308T141727Z-001\\Mon Cv Online\\CvOnline.Data\\CvOnline.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -100,10 +100,7 @@
     "C:\\Users\\Vercruysse\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Vercruysse\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Vercruysse\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Vercruysse\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\Vercruysse\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\Vercruysse\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\Vercruysse\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+    "C:\\Users\\Vercruysse\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }
