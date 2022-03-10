@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "4ac11a9b-9347-45c0-bee6-1ab477b65d78": {
+      "ProjectGuid": "4ac11a9b-9347-45c0-bee6-1ab477b65d78",
+      "DisplayName": "CvOnline.MVC",
+      "ColorIndex": 0
+    },
+    "47ee1168-b58d-4be0-a645-5c10bc8e82ca": {
+      "ProjectGuid": "47ee1168-b58d-4be0-a645-5c10bc8e82ca",
+      "DisplayName": "CvOnline.Infrastructure",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

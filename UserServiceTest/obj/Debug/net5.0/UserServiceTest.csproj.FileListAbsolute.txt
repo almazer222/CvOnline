@@ -105,13 +105,13 @@ C:\Users\QUENTINVercruysse\source\repos\CvOnline\UserServiceTest\obj\Debug\net5.
 C:\Users\QUENTINVercruysse\source\repos\CvOnline\UserServiceTest\obj\Debug\net5.0\UserServiceTest.pdb
 C:\Users\QUENTINVercruysse\source\repos\CvOnline\UserServiceTest\obj\Debug\net5.0\UserServiceTest.genruntimeconfig.cache
 C:\Users\Vercruysse\Downloads\Mon Cv Online-20220308T141727Z-001\Mon Cv Online\UserServiceTest\bin\Debug\net5.0\CoverletSourceRootsMapping
-C:\Users\Vercruysse\Downloads\Mon Cv Online-20220308T141727Z-001\Mon Cv Online\UserServiceTest\bin\Debug\net5.0\testhost.exe
 C:\Users\Vercruysse\Downloads\Mon Cv Online-20220308T141727Z-001\Mon Cv Online\UserServiceTest\bin\Debug\net5.0\testhost.dll
+C:\Users\Vercruysse\Downloads\Mon Cv Online-20220308T141727Z-001\Mon Cv Online\UserServiceTest\bin\Debug\net5.0\testhost.exe
+C:\Users\Vercruysse\Downloads\Mon Cv Online-20220308T141727Z-001\Mon Cv Online\UserServiceTest\bin\Debug\net5.0\Microsoft.TestPlatform.PlatformAbstractions.dll
 C:\Users\Vercruysse\Downloads\Mon Cv Online-20220308T141727Z-001\Mon Cv Online\UserServiceTest\bin\Debug\net5.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\Vercruysse\Downloads\Mon Cv Online-20220308T141727Z-001\Mon Cv Online\UserServiceTest\bin\Debug\net5.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\Vercruysse\Downloads\Mon Cv Online-20220308T141727Z-001\Mon Cv Online\UserServiceTest\bin\Debug\net5.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
 C:\Users\Vercruysse\Downloads\Mon Cv Online-20220308T141727Z-001\Mon Cv Online\UserServiceTest\bin\Debug\net5.0\Microsoft.TestPlatform.AdapterUtilities.dll
-C:\Users\Vercruysse\Downloads\Mon Cv Online-20220308T141727Z-001\Mon Cv Online\UserServiceTest\bin\Debug\net5.0\Microsoft.TestPlatform.PlatformAbstractions.dll
 C:\Users\Vercruysse\Downloads\Mon Cv Online-20220308T141727Z-001\Mon Cv Online\UserServiceTest\bin\Debug\net5.0\UserServiceTest.deps.json
 C:\Users\Vercruysse\Downloads\Mon Cv Online-20220308T141727Z-001\Mon Cv Online\UserServiceTest\bin\Debug\net5.0\UserServiceTest.runtimeconfig.json
 C:\Users\Vercruysse\Downloads\Mon Cv Online-20220308T141727Z-001\Mon Cv Online\UserServiceTest\bin\Debug\net5.0\UserServiceTest.runtimeconfig.dev.json

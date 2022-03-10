@@ -18,5 +18,10 @@ namespace CvOnline.Domain.Models.CV_Items
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public string Description { get; set; }
+
+        public int CvId { get; set; }
+        [ForeignKey(nameof(CvId))]
+        [InverseProperty(nameof(CV.Experiances))]
+        public CV Cv { get; set; }
     }
 }

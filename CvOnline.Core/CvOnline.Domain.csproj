@@ -4,14 +4,4 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Models\CV Items\**" />
-    <EmbeddedResource Remove="Models\CV Items\**" />
-    <None Remove="Models\CV Items\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="Models\CV.cs" />
-  </ItemGroup>
-
 </Project>

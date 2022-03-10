@@ -16,5 +16,10 @@ namespace CvOnline.Domain.Models.CV_Items
         public string Name { get; set; }
         public string Description { get; set; }
 
+        public int CvId { get; set; }
+        [ForeignKey(nameof(CvId))]
+        [InverseProperty(nameof(CvItems.Interests))]
+        public CvItems Cv { get; set; }
+
     }
 }

@@ -14,8 +14,14 @@ namespace CvOnline.Domain.Models.CV_Items
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
+
         [InverseProperty(nameof(SkillItem.Skill_Tab))]
         public ICollection<SkillItem> SkillItems { get; set; }
+
+        public int CvId { get; set; }
+        [ForeignKey(nameof(CvId))]
+        [InverseProperty(nameof(CV.Skills))]
+        public CV  Cv { get; set; }
 
     }
 }
