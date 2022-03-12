@@ -15,7 +15,7 @@ namespace CvOnline.Infrastructure
         private IUserRepository _userRepository;
         private IRepository<Entreprise> _entrepriseRepository;
         private IRepository<Address> _addressRepository;
-        private IRepository<CvItems> _cvItemsRepository;
+        private ICvItemsRepository _cvItemsRepository;
         #endregion
 
         #region Constructor
@@ -33,17 +33,7 @@ namespace CvOnline.Infrastructure
         /// <summary>
         /// To inject the DBcontext in Cv Item repository
         /// </summary>
-        public IRepository<CvItems> CvItemRepository
-        {
-            get
-            {
-                if (_cvItemsRepository == null)
-                {
-                    _cvItemsRepository = new CvItemsRepository(_context);
-                }
-                return _cvItemsRepository;
-            }
-        }
+        public ICvItemsRepository CvItemRepository => _cvItemsRepository = _cvItemsRepository ?? new CvItemsRepository(_context);
 
         /// <summary>
         /// To inject the DBcontext in entreprise repository

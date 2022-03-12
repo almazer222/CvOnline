@@ -1,4 +1,4 @@
-﻿using CvOnline.API.Ressources;
+﻿using CvOnline.API.Dtos;
 using FluentValidation;
 
 namespace CvOnline.API.Validation

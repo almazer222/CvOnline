@@ -9,9 +9,9 @@ namespace CvOnline.Domain.Services
 {
     public interface ICvItemService
     {
-        Task<CvItems> GetCvItemByIdAsync(int id);
-        Task CreateCvItemAsync(CvItems cvItem);
-        Task UpdateCvItemAsync(CvItems cvItem);
-        Task RemoveCvItemAsync(CvItems cvItem);
+        Task<CV> GetCvItemByIdAsync(int id);
+        Task CreateCvItemAsync(CV cvItem);
+        Task UpdateCvItemAsync(CV cvItem);
+        Task RemoveCvItemAsync(CV cvItem);
     }
 }

@@ -17,7 +17,7 @@ namespace CvOnline.Domain.Models.CV_Items
 
         public int CvId { get; set; }
         [ForeignKey(nameof(CvId))]
-        [InverseProperty(nameof(CvItems.Certifications))]
-        public CvItems Cv { get; set; }
+        [InverseProperty(nameof(CV.Certifications))]
+        public CV Cv { get; set; }
     }
 }

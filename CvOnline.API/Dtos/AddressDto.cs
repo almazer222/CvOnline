@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace CvOnline.API.Ressources
+﻿namespace CvOnline.API.Dtos
 {
     public class AddressDto
     {

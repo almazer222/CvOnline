@@ -69,6 +69,38 @@ namespace CvOnline.Infrastructure.Migrations
                     b.ToTable("Certification");
                 });
 
+            modelBuilder.Entity("CvOnline.Domain.Models.CV_Items.Education", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CvId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Degres")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("KindOfStudy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("School")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CvId");
+
+                    b.ToTable("Education");
+                });
+
             modelBuilder.Entity("CvOnline.Domain.Models.CV_Items.Experiance", b =>
                 {
                     b.Property<int>("Id")
@@ -297,6 +329,17 @@ namespace CvOnline.Infrastructure.Migrations
                     b.Navigation("Cv");
                 });
 
+            modelBuilder.Entity("CvOnline.Domain.Models.CV_Items.Education", b =>
+                {
+                    b.HasOne("CvOnline.Domain.Models.CvItems", "Cv")
+                        .WithMany("Educations")
+                        .HasForeignKey("CvId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cv");
+                });
+
             modelBuilder.Entity("CvOnline.Domain.Models.CV_Items.Experiance", b =>
                 {
                     b.HasOne("CvOnline.Domain.Models.CvItems", "Cv")
@@ -401,6 +444,8 @@ namespace CvOnline.Infrastructure.Migrations
             modelBuilder.Entity("CvOnline.Domain.Models.CvItems", b =>
                 {
                     b.Navigation("Certifications");
+
+                    b.Navigation("Educations");
 
                     b.Navigation("Experiances");
 

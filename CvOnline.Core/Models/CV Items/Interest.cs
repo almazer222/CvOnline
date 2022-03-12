@@ -18,8 +18,8 @@ namespace CvOnline.Domain.Models.CV_Items
 
         public int CvId { get; set; }
         [ForeignKey(nameof(CvId))]
-        [InverseProperty(nameof(CvItems.Interests))]
-        public CvItems Cv { get; set; }
+        [InverseProperty(nameof(CV.Interests))]
+        public CV Cv { get; set; }
 
     }
 }

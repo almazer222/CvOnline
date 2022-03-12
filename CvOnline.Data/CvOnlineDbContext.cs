@@ -9,7 +9,7 @@ namespace CvOnline.Infrastructure
         public DbSet<User> User { get; set; }
         public DbSet<Entreprise> Entreprise { get; }
         public DbSet<Address> Address { get; }
-        public DbSet<CvItems> CvItems { get; }
+        public DbSet<CV> CV { get; set; }
 
 
         public CvOnlineDbContext(DbContextOptions<CvOnlineDbContext> options) : base(options)

@@ -66,6 +66,7 @@ namespace CvOnline.API
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IEntrepriseService, EntrepriseService>();
             services.AddTransient<IAddressService, AddressService>();
+            services.AddTransient<ICvItemService, CvItemService>();
 
             //services.AddTransient<IRepository<Entreprise>, EntrepriseRepository>();
             //services.AddTransient<IRepository<Address>, AddressRepository>();

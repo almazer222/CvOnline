@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace CvOnline.Domain.Models
 {
     [Table("CV")]
-    public class CvItems
+    public class CV
     {
         [Key]
         public int Id { get; set; }
@@ -23,6 +23,8 @@ namespace CvOnline.Domain.Models
         public ICollection<Social> Socials { get; set; }
         [InverseProperty(nameof(Experiance.Cv))]
         public ICollection<Experiance> Experiances { get; set; }
+        [InverseProperty(nameof(Education.Cv))]
+        public ICollection<Education> Educations { get; set; }
         [InverseProperty(nameof(Interest.Cv))]
         public ICollection<Interest> Interests { get; set; }
         [InverseProperty(nameof(Certification.Cv))]

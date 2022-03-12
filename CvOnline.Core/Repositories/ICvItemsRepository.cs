@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace CvOnline.Domain.Repositories
 {
-    public interface ICvItemsRepository : IRepository<CvItems>
+    public interface ICvItemsRepository : IRepository<CV>
     {
+        Task<CV> GetCvItemsByIdAsync(int id);
     }
 }

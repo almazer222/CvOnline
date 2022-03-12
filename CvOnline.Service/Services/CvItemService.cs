@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CvOnline.Service.Services
 {
-    internal class CvItemService : ICvItemService
+    public  class CvItemService : ICvItemService
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -23,7 +23,7 @@ namespace CvOnline.Service.Services
         /// </summary>
         /// <param name="cvItem">object cv</param>
         /// <returns></returns>
-        public async Task CreateCvItemAsync(CvItems cvItem)
+        public async Task CreateCvItemAsync(CV cvItem)
         {
             await _unitOfWork.CvItemRepository.AddAsync(cvItem);
             await _unitOfWork.SaveChangesAsync();
@@ -34,9 +34,9 @@ namespace CvOnline.Service.Services
         /// </summary>
         /// <param name="id">Id of cv</param>
         /// <returns></returns>
-        public async Task<CvItems> GetCvItemByIdAsync(int id)
+        public async Task<CV> GetCvItemByIdAsync(int id)
         {
-          return await _unitOfWork.CvItemRepository.GetByIdAsync(id);
+            return await _unitOfWork.CvItemRepository.GetCvItemsByIdAsync(id);
         }
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace CvOnline.Service.Services
         /// </summary>
         /// <param name="cvItem"></param>
         /// <returns></returns>
-        public async Task RemoveCvItemAsync(CvItems cvItem)
+        public async Task RemoveCvItemAsync(CV cvItem)
         {
             _unitOfWork.CvItemRepository.Remove(cvItem);
             await _unitOfWork.SaveChangesAsync();
@@ -55,7 +55,7 @@ namespace CvOnline.Service.Services
         /// </summary>
         /// <param name="cvItem"></param>
         /// <returns></returns>
-        public async Task UpdateCvItemAsync(CvItems cvItem)
+        public async Task UpdateCvItemAsync(CV cvItem)
         {
             _unitOfWork.CvItemRepository.Update(cvItem);
             await _unitOfWork.SaveChangesAsync();

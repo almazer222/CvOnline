@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using CvOnline.API.Helper;
-using CvOnline.API.Ressources;
+using CvOnline.API.Dtos;
 using CvOnline.API.Validation;
 using CvOnline.Domain.Models;
 using CvOnline.Domain.Services;
