@@ -17,7 +17,7 @@ namespace CvOnline.API.Validation
         {
             return
                 !string.IsNullOrEmpty(interestDto.Name) &&
-                !string.IsNullOrEmpty(interestDto.Description) && interestDto.Description.Length < 51;
+                !string.IsNullOrEmpty(interestDto.Description) && interestDto.Description.Length < 200;
         }
     }
 }

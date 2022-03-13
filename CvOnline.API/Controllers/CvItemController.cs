@@ -61,6 +61,12 @@ namespace CvOnline.API.Controllers
         {
             ValidationHelper.ValidationInputDataNotNull(cvItemsDto);
 
+            cvItemsDto.Experiances.Where(e => e.EndDate == null).Select(e => e.EndDate = DateHelper.GetEmptyDateWhenNullDate(e.EndDate)).ToList();
+            cvItemsDto.Experiances.Where(e => e.StartDate == null).Select(e => e.StartDate = DateHelper.GetEmptyDateWhenNullDate(e.StartDate)).ToList();
+
+            cvItemsDto.Educations.Where(e => e.EndDate == null).Select(e => e.EndDate = DateHelper.GetEmptyDateWhenNullDate(e.EndDate)).ToList();
+            cvItemsDto.Educations.Where(e => e.StartDate == null).Select(e => e.StartDate = DateHelper.GetEmptyDateWhenNullDate(e.StartDate)).ToList();
+
             try
             {
                 var errors = await ValidationHelper.ValidationInputData(cvItemsDto);

@@ -14,8 +14,16 @@ namespace CvOnline.API.Validation
 
         public static bool CustumValidate(EducationDto educationDto)
         {
-            return educationDto.StartDate != new DateTime() &&
-                educationDto.EndDate != new DateTime() &&
+            var o = educationDto.StartDate != null;
+            var k = educationDto.EndDate != null;
+            var x = !string.IsNullOrEmpty(educationDto.School);
+            var w = !string.IsNullOrEmpty(educationDto.KindOfStudy);
+            var m = !string.IsNullOrEmpty(educationDto.Degres);
+
+
+
+            return educationDto.StartDate != null &&
+                educationDto.EndDate != null &&
                 !string.IsNullOrEmpty(educationDto.School) &&
                 !string.IsNullOrEmpty(educationDto.KindOfStudy) &&
                 !string.IsNullOrEmpty(educationDto.Degres);

@@ -15,10 +15,10 @@ namespace CvOnline.API.Validation
 
         public static bool CustumValidate(ExperianceDto experianceDto)
         {
-                return experianceDto.StartDate != new DateTime() &&
-                    experianceDto.EndDate != new DateTime() &&
+            return experianceDto.StartDate != null &&
+                    experianceDto.EndDate != null &&
                     !string.IsNullOrEmpty(experianceDto.Title) &&
-                    !string.IsNullOrEmpty(experianceDto.Description) && experianceDto.Description.Length < 51 &&
+                    !string.IsNullOrEmpty(experianceDto.Description) && experianceDto.Description.Length < 100 &&
                     !string.IsNullOrEmpty(experianceDto.Poste);
         }
     }

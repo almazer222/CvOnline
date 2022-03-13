@@ -91,3 +91,4 @@ C:\Users\Vercruysse\Downloads\Mon Cv Online-20220308T141727Z-001\Mon Cv Online\C
 C:\Users\Vercruysse\Downloads\Mon Cv Online-20220308T141727Z-001\Mon Cv Online\CvOnline.MVC\obj\Debug\net5.0\ref\CvOnline.MVC.dll
 C:\Users\Vercruysse\Downloads\Mon Cv Online-20220308T141727Z-001\Mon Cv Online\CvOnline.MVC\obj\Debug\net5.0\CvOnline.MVC.pdb
 C:\Users\Vercruysse\Downloads\Mon Cv Online-20220308T141727Z-001\Mon Cv Online\CvOnline.MVC\obj\Debug\net5.0\CvOnline.MVC.genruntimeconfig.cache
+C:\Users\Vercruysse\Downloads\Mon Cv Online-20220308T141727Z-001\Mon Cv Online\CvOnline.MVC\obj\Debug\net5.0\CvOnline.MVC.csproj.AssemblyReference.cache
