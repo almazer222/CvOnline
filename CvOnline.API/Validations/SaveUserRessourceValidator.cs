@@ -19,8 +19,8 @@ namespace CvOnline.API.Validation
                 .MaximumLength(50);
             RuleFor(m => m.Password)
                 .NotEmpty();
-            RuleFor(m => m.PhoneNumber)
-                .NotEmpty();
+            //RuleFor(m => m.PhoneNumber)
+            //    .NotEmpty();
         }
     }
 }

@@ -89,7 +89,10 @@ namespace CvOnline.API.Controllers
 
                 return Ok(new
                 {
-                    newUserRessource
+                    newUserRessource.Token,
+                    newUserRessource.FirstName,
+                    newUserRessource.LastName,
+                    newUserRessource.Email
                 });
             }
             catch (Exception ex)
@@ -129,7 +132,10 @@ namespace CvOnline.API.Controllers
 
                 return Ok(new
                 {
-                    newUserRessource
+                    newUserRessource.Token,
+                    newUserRessource.FirstName,
+                    newUserRessource.LastName,
+                    newUserRessource.Email
                 });
             }
             catch (Exception ex)

@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 namespace CvOnline.MVC.Models
 {
     public class EntrepriseModels
-    {
-        [Required]
+    { 
         [BindProperty]
+        [Required]
         public string Name { get; set; }
     }
 }

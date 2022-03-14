@@ -1,0 +1,24 @@
+﻿@using Microsoft.AspNetCore.Http
+
+@if (Context.Session.GetString("token") == null)
+{
+<li class="nav-item">
+     <a class="nav-link text-dark" asp-area="" asp-page="/Login_Register/Register">Register</a>
+</li>
+<li class="nav-item">
+     <a class="nav-link text-dark" asp-area="" asp-page="/Login_Register/Login">Loging</a>
+</li>
+}
+else
+{
+<form asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm" class="navbar-right">
+    <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item">
+            <span>@Context.Session.GetString("firstName") @Context.Session.GetString("lastName")</span>
+        </li>
+        <li>
+            <button type="submit" class="btn btn-link navbar-btn navbar-link">Log off</button>
+        </li>
+    </ul>
+</form>
+}

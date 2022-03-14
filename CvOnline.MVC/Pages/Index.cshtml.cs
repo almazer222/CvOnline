@@ -28,19 +28,24 @@ namespace CvOnline.MVC.Pages
             _logger = logger;
         }
 
-        public async Task OnGet()
+        public async Task OnGetAsync()
         {
-            using (var httpClient = new HttpClient())
-            {          
-                using (var response = await httpClient.GetAsync(_webApiConnectionOption.UrlCV + $"/GetCvItem?id={4}"))
+            try
+            {
+                using (var httpClient = new HttpClient())
                 {
+                    var response = await httpClient.GetAsync(_webApiConnectionOption.UrlCV + $"/GetCvItem?id={4}");
                     string apiReponse = await response.Content.ReadAsStringAsync();
                     CvModel = JsonConvert.DeserializeObject<CVModels>(apiReponse);
                 }
-            }
 
-            CvModel.Experiances.FindAll(e => e.EndDate == new DateTime()).ForEach(e => e.EndDate = DateTime.Today);
-            CvModel.Educations.FindAll(e => e.EndDate == new DateTime()).ForEach(e => e.EndDate = DateTime.Today);
+                CvModel.Experiances.FindAll(e => e.EndDate == new DateTime()).ForEach(e => e.EndDate = DateTime.Today);
+                CvModel.Educations.FindAll(e => e.EndDate == new DateTime()).ForEach(e => e.EndDate = DateTime.Today);
+            }catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            
 
         }
     }

@@ -8,10 +8,15 @@ namespace MyMusic.MVC.Mapping
     {
         public MappingProfile()
         {
-            //MappageDomain (DB) vers vue (ressources)
+            //MappageDomain (API) vers vue (Models)
             CreateMap<UserDto, UserModels>();
             CreateMap<EntrepriseDto, EntrepriseModels>();
             CreateMap<AddressDto, AddressModels>();
+
+            //MappageDomain (Models) vers vue (API)
+            CreateMap<UserModels, UserDto>();
+            CreateMap<EntrepriseModels, EntrepriseDto >();
+            CreateMap<AddressModels, AddressDto>();
         }
     }
 }

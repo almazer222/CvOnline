@@ -73,42 +73,43 @@ namespace CvOnline.API
             //services.AddTransient<IUserRepository, UserRepository>();
 
 
-            //var key = Encoding.ASCII.GetBytes(Configuration.GetValue<string>("AppSettings:Secret"));
+            var key = Encoding.ASCII.GetBytes(Configuration.GetValue<string>("AppSettings:Secret"));
 
-            //services.AddAuthentication(x =>
-            //{
-            //    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            //    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            //}).AddJwtBearer(x => {
-            //    x.Events = new JwtBearerEvents
-            //    {
-            //        //A chaque requete Http, on utiliser IUserService pour vérifier l'existance de l'utilisateur.
-            //        OnTokenValidated = context =>
-            //        {
-            //            var userSerice = context.HttpContext.RequestServices.GetRequiredService<IUserService>();
-            //            var userId = int.Parse(context.Principal.Identity.Name);
-            //            var user = userSerice.GetUserByIdAsync(userId);
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x =>
+            {
+                x.Events = new JwtBearerEvents
+                {
+                    //A chaque requete Http, on utiliser IUserService pour vérifier l'existance de l'utilisateur.
+                    OnTokenValidated = context =>
+                    {
+                        var userSerice = context.HttpContext.RequestServices.GetRequiredService<IUserService>();
+                        var userId = int.Parse(context.Principal.Identity.Name);
+                        var user = userSerice.GetUserByIdAsync(userId);
 
-            //            if (user == null)
-            //            {
-            //                //return unauthorized if user no longer exists
-            //                context.Fail("Unauthoriezd");
-            //            }
+                        if (user == null)
+                        {
+                            //return unauthorized if user no longer exists
+                            context.Fail("Unauthoriezd");
+                        }
 
-            //            return Task.CompletedTask;
-            //        }
-            //    };
+                        return Task.CompletedTask;
+                    }
+                };
 
-            //    x.RequireHttpsMetadata = false;
-            //    x.SaveToken = true;
-            //    x.TokenValidationParameters = new TokenValidationParameters
-            //    {
-            //        ValidateIssuerSigningKey = true,
-            //        IssuerSigningKey = new SymmetricSecurityKey(key),
-            //        ValidateIssuer = false,
-            //        ValidateAudience = false
-            //    };
-            //});
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

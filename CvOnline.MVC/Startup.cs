@@ -26,6 +26,9 @@ namespace CvOnline.MVC
         {
             services.AddRazorPages();
             services.Configure<WebApiConnectionOption>(Configuration.GetSection("BaseURL"));
+
+            services.AddAutoMapper(typeof(Startup));
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,7 +47,7 @@ namespace CvOnline.MVC
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthorization();
