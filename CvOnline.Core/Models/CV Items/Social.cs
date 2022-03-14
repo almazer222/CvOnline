@@ -15,6 +15,7 @@ namespace CvOnline.Domain.Models.CV_Items
         public int  Id { get; set; }
         public string Name { get; set; }
         public string Url { get; set; }
+        public string Icon { get; set; }
 
         public int CvId { get; set; }
         [ForeignKey(nameof(CvId))]

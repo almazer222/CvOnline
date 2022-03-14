@@ -5,65 +5,109 @@
 }
 
 <body>
-  
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
-                <!-- Post preview-->
+                <!-- Identity -->
                 <div class="post-preview">
                     <a href="post.html">
-                        <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
-                        <h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3>
+                        <h2 class="post-title">@Model.CvModel.Identity.FirstName   @Model.CvModel.Identity.LastName</h2>
+                        <h3 class="post-subtitle">@Model.CvModel.Identity.KindOfWork</h3>
                     </a>
-                    <p class="post-meta">
-                        Posted by
-                        <a href="#!">Start Bootstrap</a>
-                        on September 24, 2021
-                    </p>
+                    <div class="subheading mb-5">
+                        @Model.CvModel.Identity.Address.Number, @Model.CvModel.Identity.Address.Box · @Model.CvModel.Identity.Address.Street ·
+                        @Model.CvModel.Identity.Address.Town, @Model.CvModel.Identity.Address.PostalCode ·
+                        @Model.CvModel.Identity.Address.Contry ·
+                    </div>
                 </div>
                 <!-- Divider-->
                 <hr class="my-4" />
-                <!-- Post preview-->
-                <div class="post-preview">
-                    <a href="post.html"><h2 class="post-title">I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.</h2></a>
-                    <p class="post-meta">
-                        Posted by
-                        <a href="#!">Start Bootstrap</a>
-                        on September 18, 2021
-                    </p>
-                </div>
-                <!-- Divider-->
-                <hr class="my-4" />
-                <!-- Post preview-->
+                <!-- Experience-->
                 <div class="post-preview">
                     <a href="post.html">
-                        <h2 class="post-title">Science has not yet mastered prophecy</h2>
-                        <h3 class="post-subtitle">We predict too much for the next year and yet far too little for the next ten.</h3>
+                        <h2 class="post-title">Experiance</h2>
                     </a>
-                    <p class="post-meta">
-                        Posted by
-                        <a href="#!">Start Bootstrap</a>
-                        on August 24, 2021
-                    </p>
+                    <div class="social-icons">
+                        @foreach (var e in @Model.CvModel.Experiances.OrderByDescending(xp => xp.EndDate))
+                        {
+                            <h3>@e.Title - @e.Poste </h3> <label>@e.StartDate.ToLongDateString() - @e.EndDate.Value.ToLongDateString()</label>
+                            <p>@e.Description</p>
+                            <br />
+                        }
+                    </div>
                 </div>
                 <!-- Divider-->
                 <hr class="my-4" />
-                <!-- Post preview-->
+                <!-- Education-->
                 <div class="post-preview">
                     <a href="post.html">
-                        <h2 class="post-title">Failure is not an option</h2>
-                        <h3 class="post-subtitle">Many say exploration is part of our destiny, but it’s actually our duty to future generations.</h3>
+                        <h2 class="post-title">Education</h2>
                     </a>
-                    <p class="post-meta">
-                        Posted by
-                        <a href="#!">Start Bootstrap</a>
-                        on July 8, 2021
-                    </p>
+                    <div class="social-icons">
+                        @foreach (var e in @Model.CvModel.Educations.OrderByDescending(xp => xp.EndDate))
+                        {
+                            <h3>@e.KindOfStudy - @e.School </h3>
+                            <h5>@e.Degres</h5>
+                            <label>@e.StartDate.ToLongDateString() - @e.EndDate.ToLongDateString()</label>
+                            <br />
+                        }
+                    </div>
                 </div>
                 <!-- Divider-->
                 <hr class="my-4" />
-                <!-- Pager-->
-                <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+                <!-- Skills-->
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">Skills</h2>
+                    </a>
+                    <div class="social-icons">
+                        @foreach (var s in @Model.CvModel.Skills)
+                        {
+                            <h3>@s.Name</h3>
+                            @foreach (var sk in @s.SkillItems)
+                            {
+                                <li>
+                                    @sk.Name
+                                </li>
+                            }
+                        }
+                    </div>
+                </div>
+                <!-- Divider-->
+                <hr class="my-4" />
+                <!-- Certifications-->
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">Certifications</h2>
+                    </a>
+                    <div class="social-icons">
+                        @foreach (var c in @Model.CvModel.Certifications)
+                        {
+                            <li>
+                                @c.Name
+                            </li>
+                        }
+                    </div>
+                </div>
+                <!-- Divider-->
+                <hr class="my-4" />
+                <!-- Interests-->
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">Interests</h2>
+                    </a>
+                    <div class="social-icons">
+                        @foreach (var i in @Model.CvModel.Interests)
+                        {
+                            <h5>
+                                @i.Name
+                            </h5>
+                            <p>
+                                @i.Description
+                            </p>
+                        }
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -73,32 +117,22 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <ul class="list-inline text-center">
-                        <li class="list-inline-item">
-                            <a href="#!">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#!">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#!">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
+                        @foreach (var s in @Model.CvModel.Socials)
+                        {
+                            <li class="list-inline-item">
+                                <a href="@s.Url">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        @{
+                                            var iClass = s.icon;
+                                        }
+                                        <i class="@iClass"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        }
                     </ul>
-                    <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2021</div>
+                    <div class="small text-center text-muted fst-italic">Copyright &copy; My Cv Online 2022</div>
                 </div>
             </div>
         </div>

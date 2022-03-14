@@ -10,7 +10,42 @@
       "ProjectGuid": "47ee1168-b58d-4be0-a645-5c10bc8e82ca",
       "DisplayName": "CvOnline.Infrastructure",
       "ColorIndex": 1
+    },
+    "8d864654-8fa3-4067-bf20-183009abe743": {
+      "ProjectGuid": "8d864654-8fa3-4067-bf20-183009abe743",
+      "DisplayName": "CvOnline.API",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Fichiers divers",
+      "ColorIndex": -1
+    },
+    "1f24ee62-d448-445e-b65d-628407a19b75": {
+      "ProjectGuid": "1f24ee62-d448-445e-b65d-628407a19b75",
+      "DisplayName": "CvOnline.Domain",
+      "ColorIndex": 3
+    },
+    "a50837de-53aa-4c80-b5d5-985daefac04d": {
+      "ProjectGuid": "a50837de-53aa-4c80-b5d5-985daefac04d",
+      "DisplayName": "CvOnline.Service",
+      "ColorIndex": 4
+    },
+    "828ec1bc-0a58-432c-91e1-48e86f39a64c": {
+      "ProjectGuid": "828ec1bc-0a58-432c-91e1-48e86f39a64c",
+      "DisplayName": "CvItemsServiceTest",
+      "ColorIndex": 5
+    },
+    "f87037bc-45c0-4bd8-9561-c8863372762a": {
+      "ProjectGuid": "f87037bc-45c0-4bd8-9561-c8863372762a",
+      "DisplayName": "CvItemsServiceTest2",
+      "ColorIndex": 6
+    },
+    "14fe9735-6c89-4fb9-acec-193546df1021": {
+      "ProjectGuid": "14fe9735-6c89-4fb9-acec-193546df1021",
+      "DisplayName": "CvOnlineServiceTest",
+      "ColorIndex": 7
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 8
 }

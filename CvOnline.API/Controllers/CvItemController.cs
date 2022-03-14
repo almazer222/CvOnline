@@ -35,7 +35,7 @@ namespace CvOnline.API.Controllers
             _mappingService = mappingService;
         }
 
-        [HttpGet("")]
+        [HttpGet("GetCvItem")]
         public async Task<IActionResult> GetCvItemsByIdAsync(int id)
         {
             if (id == 0)
