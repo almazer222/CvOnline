@@ -47,11 +47,11 @@ namespace CvOnline.MVC.Pages.Login_Register
         public async Task<IActionResult> OnPostAsync()
         {
             if (string.IsNullOrEmpty(Entreprise.Name))
-                Entreprise.Name = "Mission Target";
+                Entreprise.Name = "EyeTech";
             if (string.IsNullOrEmpty(User.ConfirmPassword))
                 User.ConfirmPassword = User.Password;
             if (Address.PostalCode == 0)
-                Address.PostalCode = 7000;
+                Address.PostalCode = 8500;
 
             if (ModelState.IsValid)
             {
