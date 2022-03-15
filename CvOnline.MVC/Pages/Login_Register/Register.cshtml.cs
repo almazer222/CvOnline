@@ -37,6 +37,9 @@ namespace CvOnline.MVC.Pages.Login_Register
         public EntrepriseModels Entreprise { get; set; }
         [BindProperty]
         public AddressModels Address { get; set; }
+
+        public bool IsError { get; set; }
+        public string MessageReturn { get; set; }
         #endregion
 
 
@@ -46,12 +49,12 @@ namespace CvOnline.MVC.Pages.Login_Register
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (string.IsNullOrEmpty(Entreprise.Name))
-                Entreprise.Name = "EyeTech";
-            if (string.IsNullOrEmpty(User.ConfirmPassword))
-                User.ConfirmPassword = User.Password;
-            if (Address.PostalCode == 0)
-                Address.PostalCode = 8500;
+            if(!User.Password.Equals(User.ConfPdw))
+            {
+                IsError = true;
+                MessageReturn = "The password and password confirmation are different !";
+                return Page();
+            }
 
             if (ModelState.IsValid)
             {
@@ -78,16 +81,26 @@ namespace CvOnline.MVC.Pages.Login_Register
                             HttpContext.Session.SetString("firstName", jwt["firstName"].ToString());
                             HttpContext.Session.SetString("lastName", jwt["lastName"].ToString());
                             HttpContext.Session.SetString("email", jwt["email"].ToString());
+
+                            return RedirectToPage("../Index");
+                        }
+                        else
+                        {
+                            IsError = true;
+                            
+                            
                         }
                     }
 
                 }
                 catch (Exception ex)
                 {
+                    IsError = true;
                     ex.ToString();
                 }
             }
-            return RedirectToPage("../Index");
+
+            return Page();      
         }
     }
 }

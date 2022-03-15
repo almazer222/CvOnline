@@ -9,8 +9,6 @@ namespace CvOnline.MVC.Models
 {
     public class UserModels
     {
-        [BindProperty]
-        public string ConfirmPassword { get; set; }
         [Required,  MinLength(1, ErrorMessage = "La taille minum du nom est de 1 caractères")]
         [BindProperty]
         public string LastName { get; set; }
@@ -25,6 +23,8 @@ namespace CvOnline.MVC.Models
         [Required, MinLength(3, ErrorMessage = "La taille minum du mot de passe est de 8 caractères")]
         [BindProperty]
         public string Password { get; set; }
+        [BindProperty]
+        public string ConfPdw { get; set; }
 
     }
 }
